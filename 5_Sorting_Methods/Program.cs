@@ -27,7 +27,7 @@ namespace _5_Sorting_Methods
                         PrintArray(ShakerSort(arr));
                         break;
                     case 5:
-                        Console.WriteLine("is not ready yet");
+                        PrintArray(QuickSort(arr, 0, arr.Length - 1));
                         break;
                     default:
                         Console.WriteLine("Something is going wrong");
@@ -118,6 +118,31 @@ namespace _5_Sorting_Methods
                 right--;
             }
 
+            return arr;
+        }
+        static int[] QuickSort(int[] arr, int left, int right)
+        {
+            if(left >= right) return arr;
+
+            int pivot = arr[(left + right) / 2];
+            int i = left, j = right;
+
+            do
+            {
+                while (arr[i] < pivot) i++;
+                while (arr[j] > pivot) j--;
+
+                if (i <= j)
+                {
+                    Swap(ref arr[i], ref arr[j]);
+                    i++;
+                    j--;
+                }
+                    
+             } while (i <= j);
+
+            QuickSort(arr, left, j);
+            QuickSort(arr, i, right);
             return arr;
         }
         static void Swap(ref int a, ref int b)
