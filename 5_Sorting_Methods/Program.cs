@@ -11,6 +11,7 @@ namespace _5_Sorting_Methods
             while (true)
             {
                 Console.WriteLine("1 - SelectionSort \n2 - BubbleSort \n3 - InsertionSort \n4 - ShakerSort \n5 - QuickSort");
+                Console.WriteLine("Thanks for choosing :3");
                 int choice = int.Parse(Console.ReadLine());
                 switch(choice)
                 {
